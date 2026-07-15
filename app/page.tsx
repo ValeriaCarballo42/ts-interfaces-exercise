@@ -1,5 +1,6 @@
 import { getWeather } from "@/lib/weather";
 import { WeatherCard } from "@/components/WeatherCard";
+import { WeatherResponse } from "@/types/weather";
 
 const CORDOBA_LAT = -31.42;
 const CORDOBA_LON = -64.18;
@@ -33,8 +34,12 @@ export default async function HomePage() {
   );
 }
 
+export interface DebugInfoProps {
+  data: WeatherResponse;
+}
+
 // TODO: declará una interface para las props de este componente
-function DebugInfo(props) {
+function DebugInfo(props: DebugInfoProps) {
   return (
     <details>
       <summary>Respuesta cruda (debug)</summary>

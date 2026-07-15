@@ -3,8 +3,13 @@
 //   - temperature: number
 //   - windSpeed: number
 //   - time: string
+export interface WeatherCardProps {
+  temperature: number;
+  windSpeed: number;
+  time: string;
+}
 
-export function WeatherCard(props) {
+export function WeatherCard(props: WeatherCardProps) {
   return (
     <div className="card">
       <h2>Condiciones actuales</h2>

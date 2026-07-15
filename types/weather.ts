@@ -7,17 +7,19 @@
 // TODO: esta interface debería extender de GeoLocation
 // TODO: completar el campo "timezone" (es string)
 // TODO: completar el campo "timezone_abbreviation" (es string, viene en la respuesta)
-export interface WeatherResponse {
-  current: CurrentWeather;
-  hourly: HourlyWeather;
-}
 
+export interface WeatherResponse extends GeoLocation {
+    current: CurrentWeather;
+    hourly: HourlyWeather;
+    timezone: string;
+    timezone_abbreviation: string;
+}
 /* ---------------------------------- */
 
 export interface GeoLocation {
   latitude: number;
   longitude: number;
-  // TODO: agregar el campo "elevation" (number)
+  elevation: number;
 }
 
 /* ---------------------------------- */
@@ -41,6 +43,7 @@ export interface CurrentWeather {
 //   - "relative_humidity_2m": number[]
 // Corregí los tipos de cada campo y agregá los que faltan.
 export interface HourlyWeather {
-  time: any[];
-  temperature_2m: any[];
+  time: string[];
+  temperature_2m: number[];
+  relative_humidity_2m: number [];
 }
