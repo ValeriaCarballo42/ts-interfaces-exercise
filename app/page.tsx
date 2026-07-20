@@ -18,8 +18,8 @@ export default async function HomePage() {
       <p>Zona horaria: {data.timezone}</p>
 
       <WeatherCard
-        temperature={data.current.temperature}
-        windSpeed={data.current.wind_speed}
+        temperature={data.current.temperature_2m}
+        windSpeed={data.current.wind_speed_10m}
         time={data.current.time}
       />
 
